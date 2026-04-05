@@ -1,4 +1,5 @@
 package com.example.apploginsederhana
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -29,6 +30,9 @@ class MainActivity : AppCompatActivity() {
 // Jika sukses, akan menampilkan pesan sukses
                 Toast.makeText(this, "Anda berhasil login!",
                     Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, HomeActivity::class.java)
+                intent.putExtra("username", username)
+                startActivity(intent)
             }
         }
     }
